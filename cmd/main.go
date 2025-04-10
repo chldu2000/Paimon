@@ -1,7 +1,7 @@
 package main
 
 import (
-	"net/http"
+	"chldu2000/paimon/internal/hello"
 
 	"github.com/gin-gonic/gin"
 )
@@ -9,10 +9,7 @@ import (
 func main() {
 	r := gin.Default()
 
-	// Define a route for the root URL
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "前面的区域，以后再来探索吧！")
-	})
+	r.GET("/", hello.PaimonAlert)
 
 	// Start the server on port 10086
 	r.Run(":10086")
